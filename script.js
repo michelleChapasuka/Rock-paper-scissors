@@ -1,6 +1,7 @@
 
 //computor choice
 
+
 function getComputerChoice(number) {
     // let number=Math.random()
     
@@ -13,12 +14,12 @@ function getComputerChoice(number) {
     else return 'scissors'
     }
 
-getComputerChoice(Math.random())
+//
 
 //user choice
-  let userInput= prompt('choose your fate: *rock*,*paper*,*scissors*').toLowerCase()
-   
+  
 
+// let userInput= prompt('choose your fate: *rock*,*paper*,*scissors*').toLowerCase()
 function getUserChoice(input) {
   
      switch (input) {
@@ -33,20 +34,30 @@ function getUserChoice(input) {
 
     }
 }
-getUserChoice(userInput)
+// getUserChoice(userInput)
 
-let userScore=0
-let computerScore=0
+
 
 // playing a round 
-const humanSelection= getUserChoice(userInput)
-const computorSelection= getComputerChoice(Math.random())
+
 
 // console.log(humanSelection);
 // console.log(computorSelection);
 
 
-function playRound(userChoice,computerChoice) {
+
+
+// playRound(humanSelection,computorSelection);
+function playGame(round) {
+    let userScore=0
+let computerScore=0
+    for (let index = 1; index < round; index++) {
+        userInput= prompt('choose your fate: *rock*,*paper*,*scissors*').toLowerCase()
+        console.log('round',index);
+        
+        let humanSelection= getUserChoice(userInput)
+        let computorSelection= getComputerChoice(Math.random())
+        function playRound(userChoice,computerChoice) {
     let playerChoice=userChoice.toLowerCase()
 // when players have a draw
     if(playerChoice=='rock' && computerChoice=='rock'  
@@ -94,29 +105,15 @@ function playRound(userChoice,computerChoice) {
             console.log('player score:',userScore);
             console.log('computer score:', computerScore);
         }
-            
+    else re
         
-        
-        
-        
-}
-playRound(humanSelection,computorSelection)
-
-
-function playGame(round) {
-    let numofRounds=0
-    while (numofRounds<5) {
-    
-        
-        
+        }
+        playRound(humanSelection,computorSelection)
     }
-    
+
 }
-playGame(playRound())
 
-
-
-
+playGame(5)
 
 
 
